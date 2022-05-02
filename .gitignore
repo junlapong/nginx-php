@@ -1,0 +1,9 @@
+nginx/*
+!nginx/conf/
+nginx/conf/*
+!nginx/conf/nginx.conf
+php/*
+!php/php.ini
+
+_download/
+*.zip
