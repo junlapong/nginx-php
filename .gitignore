@@ -4,6 +4,11 @@ nginx/conf/*
 !nginx/conf/nginx.conf
 php/*
 !php/php.ini
+!php/ext/
+php/ext/*
+!php/ext/php_xdebug.dll
 
 _download/
 *.zip
+
+.idea/
