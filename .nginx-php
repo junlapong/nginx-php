@@ -1,0 +1,24 @@
+# include in .bashrc
+# source /path/to/.nginx-php
+
+export NGINX_PHP_PATH=/c/Dev/nginx-php
+
+### nginx ###
+export NGINX_HOME=$NGINX_PHP_PATH/nginx
+
+alias nginx="$NGINX_HOME/nginx -p $NGINX_HOME"
+alias nginx-start="start $NGINX_HOME/nginx -p $NGINX_HOME"
+alias nginx-stop="nginx -s stop"
+
+### PHP ###
+export PHP_VER=7.1.16 # 7.1.33, 7.4.28, 8.1.5
+export PHP_HOME=$NGINX_PHP_PATH/php/php-$PHP_VER
+export PATH=$PHP_HOME:$PATH
+
+phpvm() {
+	export PATH=$NGINX_PHP_PATH/php/php-$1:$PATH
+	php -v
+}
+
+alias php-start="$NGINX_PHP_PATH/bin/RunHiddenConsole $PHP_HOME/php-cgi -b 127.0.0.1:9000"
+alias php-stop="taskkill //IM "php-cgi.exe""
